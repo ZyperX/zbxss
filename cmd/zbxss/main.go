@@ -34,7 +34,7 @@ func probes (payload string,url string) {
         }
         resp := fasthttp.AcquireResponse()
         client := &fasthttp.Client{}
-        statusCode, _, _ := fasthttp.Get(nil, url)
+        statusCode, _, _ := client.Get(nil, url)
         client.Do(req, resp)
         sc := resp.StatusCode()
         fmt.Println(url,"BXss payload send:",sc,"hostheader check:",statusCode)
